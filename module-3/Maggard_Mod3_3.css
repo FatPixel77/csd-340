@@ -1,0 +1,55 @@
+#container {
+    text-align: center;
+}
+
+h1 {
+    margin-top: 50px;
+    font-weight: 500;
+}
+
+.side-by-side {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-div,
+.right-div {
+    width: 45%;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+.left-div ol {
+    border: 1px solid red;
+    border-radius: 15px;
+    padding: 10px;
+    list-style: inside;
+    list-style-position: inside;
+    font-weight: 300;
+}
+
+.right-div ul {
+    border: 1px dashed red;
+    border-radius: 15px;
+    padding: 10px;
+    list-style: upper-roman;
+    list-style-position: inside;
+    font-weight: 300;
+}
+
+.back-link {
+    text-decoration: none;
+    float: right;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.last-div {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    clear: both;
+}
