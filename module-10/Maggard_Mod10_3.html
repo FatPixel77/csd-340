@@ -1,0 +1,69 @@
+<!-- Ronnie Maggard : Assignment 10.3 -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <div id=”container”></div>
+        <h1>Assignment 10.3: JavaScript - Part 2</h1>
+        <h2></h2>
+    </head>
+    <body>
+        <title>CSD 340 Development with HTML and CSS</title>
+        <script>
+            function displayImage(imageElement, newImageFile){
+              imageElement.src = newImageFile;
+            }
+          </script>
+        
+          <link rel='stylesheet' type='text/css' href='body1.css' />
+        
+        </head>
+        
+        <body>
+          <br />
+          <div>
+            <a href="#"
+               onmouseover="cave.src='cave_01.jpg';"
+               onmouseout="cave.src='cave_02.jpg';"
+               onclick="displayImage(this.getElementsByTagName('img')[0], 'cave_03.jpg'); return false;">
+            
+              <img border="0" name="cave" src="cave_02.jpg">
+            </a>
+          </div>
+          <br />
+          <div
+               onmouseover="this.style.color='red';"
+               onmouseout="this.style.color='black';">
+        
+            Run your mouse over the image to change and then select to see another image.
+            <br />
+        
+          </div>
+          <div>
+            <a href="#"
+               onmouseover="moon.src='moon_01.jpg';"
+               onmouseout="moon.src='moon_02.jpg';"
+               onclick="displayImage(this.getElementsByTagName('img')[0], 'moon_03.jpg'); return false;">
+            
+              <img border="0" name="moon" src="moon_02.jpg">
+            </a>
+          </div>
+          <br />
+          <div
+               onmouseover="this.style.color='red';"
+               onmouseout="this.style.color='black';">
+        
+            Run your mouse over the image to change and then select to see another image.
+            <br />
+            Right-click and select View Source for more details.
+            <address> 
+                <p><a href="https://www.bellevue.edu">Bellevue University</a></p>
+                <p>1000 Galvin Road</p>
+                <p>Bellevue, NE 68005</p>
+            </address>
+        
+          </div>
+    </body>
+</html>
+
+
+
