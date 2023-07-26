@@ -1,0 +1,92 @@
+<!-- Ronnie Maggard : Assignment 12.2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <link href="site.css" type="text/css" rel="stylesheet">
+    <link href="Maggard_Mod12_2.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <h1>Assignment 12.2: Javascript - Part 4</h1>
+
+        <div class="full-width-div">
+            <button id="topToBottomBtn">Top to Bottom</button>
+            <button id="bottomToTopBtn">Bottom to Top</button>
+        </div>
+        
+        <div class="side-by-side">
+            <div class="left-div">
+                <h3>Top 10 Favorite Books</h3>
+                <ol id="booksList">
+                    <li>The Bible</li>
+                    <li>To Kill a Mocking Bird</li>
+                    <li>The Catcher in the Rye</li>
+                    <li>Anna Karenina</li>
+                    <li>A Heart for Freedom</li>
+                    <li>The Great Gatsby</li>
+                    <li>Hamlet</li>
+                    <li>Wuthering Heights</li>
+                    <li>Beloved</li>
+                    <li>Jane Eyre</li>
+                </ol>
+            </div>
+            <div class="right-div">
+                <h3>5 Things I’ve Learned Since the Course Started</h3>
+                <ul>
+                    <li>How good visual studio code is for html and css</li>
+                    <li>How to make html docs</li>
+                    <li>How to make css docs</li>
+                    <li>How to link a css and html doc </li>
+                    <li>The html seems to be easier than java</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="full-width-div">
+            <a href="https://fatpixel77.github.io/csd-340/">Landing Page</a>
+        </div>
+        
+        <hr>
+
+        <script>
+            // Get the ordered list element
+            const booksList = document.getElementById("booksList");
+            // Create an array to store the book titles
+            const bookTitles = Array.from(booksList.children).map(li => li.textContent);
+
+            // Function to display array elements in ascending order
+            function displayAscendingOrder() {
+                bookTitles.sort();
+                updateList();
+            }
+
+            // Function to display array elements in descending order
+            function displayDescendingOrder() {
+                bookTitles.sort((a, b) => b.localeCompare(a));
+                updateList();
+            }
+
+            // Function to update the ordered list with the sorted book titles
+            function updateList() {
+                booksList.innerHTML = ""; // Clear the current list
+
+                // Append the sorted book titles as list items
+                bookTitles.forEach(title => {
+                    const li = document.createElement("li");
+                    li.textContent = title;
+                    booksList.appendChild(li);
+                });
+            }
+
+            // Add click event listeners to the buttons
+            const topToBottomBtn = document.getElementById("topToBottomBtn");
+            topToBottomBtn.addEventListener("click", displayAscendingOrder);
+
+            const bottomToTopBtn = document.getElementById("bottomToTopBtn");
+            bottomToTopBtn.addEventListener("click", displayDescendingOrder);
+        </script>
+
+    </div>
+</body>
+</html>
